@@ -3,158 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>for shin hari 💖</title>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;600&display=swap" rel="stylesheet">
+    <title>SUDHAR JA BHAI ⚠️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Space+Mono&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary: #ff758c;
-            --secondary: #ffccd5;
-            --bg: #0a0a0b; /* Deep Black Professional */
-        }
-
         body {
-            margin: 0;
+            background-color: #000;
+            color: #ff0000;
+            font-family: 'Space Mono', monospace;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: var(--bg);
-            font-family: 'Quicksand', sans-serif; /* Clean Professional Font */
+            margin: 0;
             overflow: hidden;
-            color: white;
-            text-transform: lowercase; /* Tiny Caps Force */
+            text-transform: uppercase;
         }
 
-        .container { 
-            text-align: center; 
-            z-index: 10; 
-        }
-
-        #welcome-msg {
-            font-size: 0.85rem;
-            letter-spacing: 3px;
-            color: var(--secondary);
-            margin-bottom: 50px;
-            font-weight: 300;
-            opacity: 0.7;
-        }
-
-        /* Clean Gift Box */
-        .gift-box {
+        /* Glitch Effect */
+        .glitch {
+            font-size: 3rem;
+            font-family: 'Permanent Marker', cursive;
             position: relative;
-            width: 110px;
-            height: 110px;
-            background: var(--primary);
-            margin: 0 auto;
+            animation: shake 0.2s infinite;
+            text-shadow: 2px 2px #fff;
+        }
+
+        .container {
+            text-align: center;
+            border: 2px solid #ff0000;
+            padding: 50px;
+            background: rgba(255, 0, 0, 0.05);
+            box-shadow: 0 0 50px #ff0000;
+        }
+
+        .warning-text {
+            font-size: 1.2rem;
+            margin-top: 20px;
+            color: #fff;
+            letter-spacing: 2px;
+        }
+
+        .btn-danger {
+            margin-top: 30px;
+            padding: 15px 30px;
+            background: #ff0000;
+            color: #000;
+            border: none;
+            font-weight: bold;
             cursor: pointer;
-            border-radius: 6px;
-            box-shadow: 0 10px 40px rgba(255, 117, 140, 0.15);
+            font-family: 'Space Mono', monospace;
         }
 
-        /* Ultra Thin Professional Ribbon */
-        .gift-box::before {
-            content: '';
-            position: absolute;
-            width: 10px; 
-            height: 100%;
+        .btn-danger:hover {
             background: #fff;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 1;
+            box-shadow: 0 0 20px #fff;
         }
 
-        .gift-box-lid {
-            position: absolute;
-            width: 120px;
-            height: 15px;
-            background: #ff8fa3;
-            top: -8px;
-            left: -5px;
-            z-index: 5;
-            border-radius: 3px;
-            transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        @keyframes shake {
+            0% { transform: translate(2px, 1px) rotate(0deg); }
+            20% { transform: translate(-1px, -2px) rotate(-1deg); }
+            40% { transform: translate(-3px, 0px) rotate(1deg); }
+            60% { transform: translate(3px, 2px) rotate(0deg); }
+            80% { transform: translate(1px, -1px) rotate(1deg); }
+            100% { transform: translate(-1px, 2px) rotate(-1deg); }
         }
 
-        .gift-box.open .gift-box-lid { 
-            transform: translateY(-130px) scale(0.5); 
-            opacity: 0; 
-        }
-
-        /* Professional Glassmorphism Card */
-        #message-card {
+        #scary-img {
             display: none;
-            padding: 40px 30px;
-            background: rgba(255, 255, 255, 0.04);
-            backdrop-filter: blur(25px);
-            border-radius: 25px;
-            border: 1px solid rgba(255,255,255,0.08);
-            max-width: 320px;
-            animation: cardFadeUp 1.2s ease forwards;
-        }
-
-        .shayari {
-            font-size: 1.1rem;
-            line-height: 2;
-            color: var(--secondary);
-            font-weight: 500;
-            letter-spacing: 0.5px;
-        }
-
-        .emoji {
-            font-size: 1.3rem;
-            display: inline-block;
-            margin: 0 5px;
-            vertical-align: middle;
-        }
-
-        .footer {
-            font-size: 0.7rem;
-            letter-spacing: 4px;
-            opacity: 0.3;
-            margin-top: 35px;
-            font-weight: 300;
-        }
-
-        @keyframes cardFadeUp {
-            from { transform: translateY(40px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            object-fit: cover;
+            z-index: 999;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <div id="welcome-msg">hi shin hari, tap the box ✨</div>
+    <div class="container" id="mainBox">
+        <div class="glitch">SUDHAR JA BHAI</div>
+        <div class="warning-text">System access detected...<br>Scanning browser history...</div>
+        <p style="color: yellow; margin-top: 10px;">Warning: 100+ Cringe videos found!</p>
         
-        <div class="gift-box" id="giftBox" onclick="openGift()">
-            <div class="gift-box-lid"></div>
-        </div>
-
-        <div id="message-card">
-            <div class="shayari">
-                uski hansi jaise khilte gulab ki mehek <span class="emoji">🌸</span><br>
-                uski aankhon mein jaise jhilmilati chamak <span class="emoji">✨</span><br>
-                shin hari, tumhare hone se har pal haseen hai <span class="emoji">🎈</span><br>
-                khuda kare yoon hi barkarar rahe tumhari har ek jhalak <span class="emoji">💖</span>
-            </div>
-            <div class="footer">just for you — ravi</div>
-        </div>
+        <button class="btn-danger" onclick="trollStart()">Click to Stop Scan</button>
     </div>
 
-    <script>
-        function openGift() {
-            const box = document.getElementById('giftBox');
-            const card = document.getElementById('message-card');
-            const welcome = document.getElementById('welcome-msg');
+    <audio id="trollSound">
+        <source src="https://www.myinstants.com/media/sounds/discord-notification.mp3" type="audio/mpeg">
+    </audio>
 
-            box.classList.add('open');
-            setTimeout(() => {
-                box.style.display = 'none';
-                welcome.style.display = 'none';
-                card.style.display = 'block';
-            }, 600);
+    <script>
+        function trollStart() {
+            const sound = document.getElementById('trollSound');
+            sound.play();
+            
+            alert("Abe oye! Sudhar ja abhi bhi waqt hai 😂");
+            alert("History delete karle, warna Teri GF ko bata dunga!");
+            
+            for(let i=0; i<3; i++) {
+                alert("Loading Virus... " + (i+1)*33 + "%");
+            }
+            
+            document.getElementById('mainBox').innerHTML = `
+                <div class="glitch" style="font-size: 5rem;">🤡</div>
+                <div class="warning-text" style="color: #0f0;">TROLL HOGAYA TU!</div>
+                <p style="margin-top: 20px;">Ab jaake padhai kar, cyber expert banne de mujhe!</p>
+                <button class="btn-danger" onclick="location.reload()">Back to Normal</button>
+            `;
         }
     </script>
 </body>
-
 </html>
